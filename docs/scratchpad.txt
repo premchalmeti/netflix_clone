@@ -1,0 +1,14 @@
+
+- folder structure:
+- project setup:
+- pug templating:
+
+- 2 apis
+- 1 list
+- 2 details
+
+
+view
+controller
+    - service
+model

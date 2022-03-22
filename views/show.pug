@@ -1,0 +1,6 @@
+extends base.pug
+
+block content
+    h2 #{show.name}
+    video(id="videoPlayer", width='50%' controls muted="muted" autoplay)
+        source(src=`/stream/${show.id}/`, type='video/mp4')
