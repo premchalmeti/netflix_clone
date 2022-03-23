@@ -5,8 +5,8 @@ const fs = require('fs');
 function get(req, res) {
     try {
         // res.json(shows.get(req.args.get));
-        res.render('home.pug', {
-            "title": "Watch TV Shows Online, Watch Series Online",
+        res.render('netflix_home.pug', {
+            "title": "Netflix - Watch TV Shows Online, Watch Series Online",
             "shows": shows.get()
         });
     } catch(error) {
