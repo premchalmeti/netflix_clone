@@ -5,8 +5,8 @@ const router = express.Router();
 
 
 // template routes
-router.get('/', ctrl.get)
-router.post('/:id/', ctrl.play)
+router.get('/', ctrl.home)
+router.get('/play/:id/', ctrl.play)
 router.get('/stream/:id/', ctrl.stream)
 
 

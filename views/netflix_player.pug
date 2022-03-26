@@ -1,0 +1,6 @@
+extends netflix_home.pug
+
+block content
+    video(style='width: 100%;' controls)
+        source(src=`/stream/${show._id}/` type='video/mp4')
+        Your browser does not support the video tag

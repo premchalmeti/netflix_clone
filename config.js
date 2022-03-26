@@ -7,6 +7,12 @@ const common = {
     ENV: process.env.ENV,
     BASE_DIR: __dirname,
     VIDEO_DIR: path.join(__dirname, 'videos'),
+    DB: {
+        URL: 'mongodb://127.0.0.1:27017/netflix_db',
+        COLLECTIONS: {
+            SHOWS: 'shows'
+        }
+    }    
 };
 
 

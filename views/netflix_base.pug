@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        block head
+            title(data-rh='true') #{title} - Netflix
+
+        block links
+            link(type='text/css' rel='stylesheet' href='https://codex.nflxext.com/%5E3.0.0/truthBundle/webui/1.22.5-shakti-css-v1b7ed29f/css/css/less%7Ccore%7Cerror-page.less/1/b0spv4utlo5far/none/true/none' data-uia='botLink')
+            link(type='text/css' rel='stylesheet' href='https://codex.nflxext.com/%5E3.0.0/truthBundle/webui/1.22.5-shakti-css-v1b7ed29f/css/css/less%7Cpages%7CakiraClient.less/1/b0spv4utlo5far/none/true/none' data-uia='botLink')
+            link(rel='shortcut icon' href='https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico')
+            link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' crossorigin='anonymous' referrerpolicy='no-referrer')
+            link(rel="stylesheet", href="/static/css/styles.css")
+        style.
+            h2 {
+                color: red
+            }
+
+    body
+        block body
+            #appMountPoint
+                .netflix-sans-font-loaded
+                    div(dir='ltr')
+                        div
+                            .bd.dark-background(lang='en-IN' data-uia='container-adult')            
+
+                            block header
+                                include netflix_header.pug
+
+                            block content
+                                h2 Base content here
+
+                            block footer
+                                include netflix_footer.pug
