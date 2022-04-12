@@ -8,7 +8,51 @@
 - 2 details
 
 
-view
-controller
+- model:
+    - data layer
+    - so deals with all crud db related operations
+
+- view:
+    - is the layer where we serve html pages
+
+- controller
     - service
-model
+    - is glue between model layer and view
+    - you can write all your business logic in controllers
+
+
+** dependencies:
+    - dotenv: to parse .env file and set environment variables
+    - express: 
+        - its a popular nodejs framework for writing http apis
+    - mongodb:
+        - it is a mongodb db connector
+    - pug:
+        - templating engine for SSR
+
+
+
+pug templating:
+links: https://pugjs.org/api/getting-started.html
+
+base.pug
+    html
+        head
+            link(rel="stylsheet", src="")
+            
+        body
+            block content
+                h1 your html content goes here
+
+home.pug
+    extends base.pug
+
+    block content
+        this is the home view
+
+player.pug
+    extends base.pug
+
+    block content
+        this is the details view
+

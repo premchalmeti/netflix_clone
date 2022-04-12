@@ -4,10 +4,12 @@ const ctrl = require('../controllers/shows')
 const router = express.Router();
 
 
-// template routes
-router.get('/', ctrl.home)
-router.get('/play/:id/', ctrl.play)
-router.get('/stream/:id/', ctrl.stream)
+// views
+router.get('/shows/', ctrl.listAPI)
+router.get('/shows/:id/', ctrl.detailAPI)
+
+// stream api
+router.get('/stream/:id/', ctrl.streamAPI)
 
 
 module.exports = router;

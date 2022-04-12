@@ -1,19 +1,16 @@
-const { getDb } = require('./db');
-const config = require('../config');
-const { ObjectId } = require('mongodb');
+const mongoose = require('mongoose');
 
+const showsSchema = new mongoose.Schema({
+    title: String,
+    title_img: String,
+    synopsis: String,
+    banner: String,
+    ratings: String,
+    path: String,
+})
 
-async function getShow(id) {
-    let collection = getDb().collection(config.DB.COLLECTIONS.SHOWS);
-    if(id) {
-        return collection.findOne(ObjectId(id));
-    } else {
-        return collection.find().toArray();
-    }
-}
-
-
+const Shows = mongoose.model("shows", showsSchema);
 
 module.exports = {
-    getShow
+    Shows
 }

@@ -1,34 +1,19 @@
-require('dotenv').config();
-const config = require('./config');
-const express = require('express');
 const showRouter = require('./routes/shows');
+
+const express = require('express');
 const app = express();
+const path = require('path');
 
-
-app.set('view engine', 'pug');
-app.use('/static', express.static('public'));
- 
-
-// log middleware
-app.use((req, res, next) => {
-    console.log(`URL HIT: ${req.url}`);
-    next();
-});
-
+const mongoose = require('mongoose');
 
 // routers
 app.use('/', showRouter);
 
 
-// error handle
-app.get('*', (req, res, next)=>{
-    res.end('Invalid path: ' + req.path);
-    console.error('Invalid path: '+ req.path);
-    next();
-});
+function startServer() {
+    app.listen(8888, "127.0.0.1", () => {
+        console.info(`Server running on 127.0.0.1:8888`);
+    });
+}
 
-
-app.listen(config.PORT, config.HOST, () => {
-    console.log(`Server running in ${config.ENV} mode`);
-    console.info(`Server running on ${config.HOST}:${config.PORT}`);
-});
+mongoose.connect("mongodb://127.0.0.1:27017/netflix_db", {useNewUrlParser: true, useUnifiedTopology: true}).then(startServer);
