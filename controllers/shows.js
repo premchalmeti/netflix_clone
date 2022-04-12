@@ -34,7 +34,7 @@ async function streamAPI(req, res) {
         "Content-Range": `bytes ${start}-${end}/${videoSize}`,
         "Accept-Ranges": "bytes",
         "Content-Length": contentLength,
-        "Content-Type": "video/mkv"
+        "Content-Type": "video/mp4"
     }
 
     // HTTP Status 206 for Partial Content
